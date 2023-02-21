@@ -9,7 +9,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Online Notepad" />
     <meta property="og:description" content="Free Online Notepad" />
-
 </head>
 <body>
     <style>
@@ -95,10 +94,18 @@
             box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
             transform: translateY(-2px);
         }
-
+        .btn {
+            padding: 4px 7px;
+        }
         @media (min-width: 768px) {
         .btn {
             padding: 10px 30px;
+        }
+
+        }
+        @media (max-width: 768px) {
+        #textContainer{
+            width: 98%;
         }
         }
         .btnContainer{
