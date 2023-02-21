@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8115059612402104"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Notepad | Write your notes online</title>
-    <meta name="description" content="Free Online Notepad. No login required. Online Notepad for text editing. Free text editor online">
+    <meta name="description" content="Free Online Notepad. No login required. Online Notepad for text editing. Free text editor">
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Online Notepad" />
     <meta property="og:description" content="Free Online Notepad" />
@@ -320,7 +320,7 @@
 
                 break;
             case "n":
-                let isMobile = false
+                let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                 if(document.getElementById("txtContent").spellcheck){
                     document.getElementById("txtContent").spellcheck=false
                     document.getElementById("nBtn").innerHTML="Spell Check";
