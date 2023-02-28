@@ -162,6 +162,8 @@
         #logoAbout{
             margin-left: 5px;
             margin-top: 13px;
+            width: 35%;
+            height: auto;
         }
         #cBtn{
             visibility: hidden;
@@ -193,8 +195,9 @@
             margin-left: -58px;
             font-family: sans-serif;
             min-height: 58px;
-            display: flex;
+            /* display: flex; */
             align-items: center;
+            cursor: default;
         }
 
         .popup .popuptext::after {
@@ -246,13 +249,40 @@
                 flex-direction: column;
             }
             #logoAbout{
-                width: 97%;
+                width: 100%;
                 margin-bottom: 20px;
+                margin-left: 0px !important;
+            }
+            .aboutSpan{
+                padding-left: 0px !important;
+            }
+            #closeIcon{
+                opacity: 1 !important;
             }
         }
         .aboutSpan{
             text-align: left;
             padding-left: 1em;
+            padding-top: 10px;
+        }
+        .aboutDiv{
+            display: flex;
+        }
+        .hOne{
+            text-align: left;
+            font-size: 18px;
+        }
+        #closeIcon{
+            width: 30px;
+            float: right;
+            position: relative;
+            top: -13px;
+            right: -17px;
+            cursor: pointer;
+            opacity: .5;
+        }
+        #closeIcon:hover{
+            opacity: 1;
         }
     </style>
 </head>
@@ -260,11 +290,15 @@
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8115059612402104"
      crossorigin="anonymous"></script> -->
      <div class="headerLogo">
-        <div class="popup" onclick="myFunctionPopUp()">
-            <img src="on1.png" id="logo" alt="Online Notepad" width="120" height="100">
-            <div class="popuptext aboutDiv" id="myPopup">
-            <img src="note.png" id="logoAbout" alt="Online Notepad Image" width="380" height="200">
+        <div class="popup" >
+            <img src="on1.png" id="logo" alt="Online Notepad" width="120" height="100" onclick="myFunctionPopUp()">
+            <div class="popuptext" id="myPopup">
+                <img src="cross.png" id="closeIcon" alt="About Close Icon"  onclick="myFunctionPopUp()">
+                <h1 class="hOne">About Online Notepad :</h1>
+            <div class="aboutDiv">
+            <img src="note.png" id="logoAbout" alt="Online Notepad Image">
                 <span class="aboutSpan">Online Notepad is for editing plain text online, It will help you to write documents in real-time on the internet. It is super simple tool which does not require any login or any user data, and can be used as a replacement of a paper or a notepad or a text file. It is Designed and developed by Green Games. Feel free to contact d.old.green.games@gmail.com for any concern !</span></div>
+            </div>
         </div>
         <!-- <div id="headSenondDiv">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8115059612402104"
