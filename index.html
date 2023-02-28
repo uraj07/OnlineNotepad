@@ -162,8 +162,8 @@
         #logoAbout{
             margin-left: 5px;
             margin-top: 13px;
-            width: 35%;
-            height: auto;
+            /* width: 35%;
+            height: auto; */
         }
         #cBtn{
             visibility: hidden;
@@ -190,9 +190,9 @@
             padding: 25px 30px;
             position: absolute;
             z-index: 1;
-            top: 115px;
+            top: 105px;
             left: 50%;
-            margin-left: -58px;
+            margin-left: -55px;
             font-family: sans-serif;
             min-height: 58px;
             /* display: flex; */
@@ -262,7 +262,6 @@
         }
         .aboutSpan{
             text-align: left;
-            padding-left: 1em;
             padding-top: 10px;
         }
         .aboutDiv{
@@ -271,9 +270,9 @@
         .hOne{
             text-align: left;
             font-size: 18px;
+            padding-left: 5px;
         }
         #closeIcon{
-            width: 30px;
             float: right;
             position: relative;
             top: -13px;
@@ -284,6 +283,30 @@
         #closeIcon:hover{
             opacity: 1;
         }
+        .content{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding-left: 1em;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 350px;
+            padding-right: 2px;
+        }
+        .content::-webkit-scrollbar-thumb {
+            background: #424242;
+            border-radius: 12px;
+            height: 55px;
+        }
+        .content::-webkit-scrollbar {
+            background-color: #E8E8E8;
+            width: 6px;
+            border-radius: 12px;
+        }
+        li{
+            margin-bottom: 5px;
+        }
+            
     </style>
 </head>
 <body>
@@ -291,13 +314,38 @@
      crossorigin="anonymous"></script> -->
      <div class="headerLogo">
         <div class="popup" >
-            <img src="on1.png" id="logo" alt="Online Notepad" width="120" height="100" onclick="myFunctionPopUp()">
+            <img src="on1.png" id="logo" alt="Online Notepad" width="113.7px" height="81.4625px" onclick="myFunctionPopUp()">
             <div class="popuptext" id="myPopup">
-                <img src="cross.png" id="closeIcon" alt="About Close Icon"  onclick="myFunctionPopUp()">
+                <img src="cross.png" id="closeIcon" alt="About Close Icon" width="29.2125px" height="29.2125px" onclick="myFunctionPopUp()">
                 <h1 class="hOne">About Online Notepad :</h1>
             <div class="aboutDiv">
-            <img src="note.png" id="logoAbout" alt="Online Notepad Image">
-                <span class="aboutSpan">Online Notepad is for editing plain text online, It will help you to write documents in real-time on the internet. It is super simple tool which does not require any login or any user data, and can be used as a replacement of a paper or a notepad or a text file. It is Designed and developed by Green Games. Feel free to contact d.old.green.games@gmail.com for any concern !</span></div>
+            <img src="note.png" id="logoAbout" alt="Online Notepad Image" width="398.575.px" height="202.087px" >
+            <div class="content">
+                <span class="aboutSpan"style="font-size: 14px;">Online Notepad is for editing plain text online, It is a free browser-based text editor that will help you to write documents in real-time on the internet. It is super simple tool which does not require any login or any user data. It is great for writing quick notes and can be used as a replacement of a paper or a notepad or a text file. Online Notepad provides basic useful features like copy, paste, undo, redo, font formatting, spell checker, word counter, character counter. It also has the option to download or save the drafted text. It is Designed and developed by Green Games. Feel free to contact d.old.green.games@gmail.com for any concern !</span>
+                <span style="margin: 1em 0px; text-decoration: underline; text-underline-offset: 3px;">
+                    Browser Compatibility:
+                </span>
+                <span style="font-size: 14px;">
+                    Online Notepad supports modern web browsers : Google Chrome, Mozilla Firefox, Safari, Opera, Edge, Internet Explorer . You need to enable JavaScript in order to use the application.
+                </span>
+                <span style="margin: 1em 0px; text-decoration: underline; text-underline-offset: 3px;">
+                    Uses of Online Notepad:
+                </span>
+                <ul style="font-size: 14px;padding-left: 25px;">
+                    <li>It makes writing notes easier and more convenient.</li>
+                    <li>Due to its simple design, you will be able to concentrate more on your works.</li>
+                    <li>It helps developers to work on the same browser window without switching to other Applications.</li>
+                    <li>It helps you to write and edit plain text online, you do not need to install or launch other Software.</li>
+                    <li>Students, Investors and Traders can quickly create online notes without installing text editing software.</li>
+                    <li>It also provides inbuilt spell check which is very useful when you draft things very fast.</li>
+                    <li>This tool can be used to quickly store things like holiday destinations, favorite places, and other important contents.</li>
+                    <li>It is very helpful for the Bloggers, writers, and webmasters who can use it to note down their thoughts.</li>
+                </ul>
+            </div>
+            </div>
+            <div style="text-align:left; padding-left: 5px;">
+                <span>Copyright © 2023. All rights reserved.</span>
+            </div>
             </div>
         </div>
         <!-- <div id="headSenondDiv">
