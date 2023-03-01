@@ -198,6 +198,7 @@
             /* display: flex; */
             align-items: center;
             cursor: default;
+            padding-top: 0px;
         }
 
         .popup .popuptext::after {
@@ -256,8 +257,19 @@
             .aboutSpan{
                 padding-left: 0px !important;
             }
-            #closeIcon{
+            .iconImg{
                 opacity: 1 !important;
+            }
+            .content{
+                padding-left: 0px !important;
+                max-height: 270px !important;
+            }
+            .copyWrite{
+                margin-top: 1em !important ;
+                font-size: 14px;
+            } 
+            #helpIcon, #questionIcon, #infoIcon{
+                display: none !important;
             }
         }
         .aboutSpan{
@@ -272,18 +284,24 @@
             font-size: 18px;
             padding-left: 5px;
         }
-        #closeIcon{
-            float: right;
-            position: relative;
-            top: -13px;
-            right: -17px;
+        .iconImg{
             cursor: pointer;
             opacity: .5;
         }
-        #closeIcon:hover{
+        .iconImg:hover{
             opacity: 1;
         }
-        .content{
+        .iconWrapper{
+            position: relative;
+            top: 9px;
+            right: -17px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .iconWrapper img{
+            margin: 0px 5px;
+        }
+        .content, .faq{
             display: flex;
             flex-direction: column;
             text-align: left;
@@ -303,10 +321,38 @@
             width: 6px;
             border-radius: 12px;
         }
+        .faq::-webkit-scrollbar-thumb {
+            background: #424242;
+            border-radius: 12px;
+            height: 55px;
+        }
+        .faq::-webkit-scrollbar {
+            background-color: #E8E8E8;
+            width: 6px;
+            border-radius: 12px;
+        }
         li{
             margin-bottom: 5px;
         }
-            
+        .hTwo{
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .hThree{
+            margin: 10px 0px;
+            font-size: 16px;
+        }
+        .hFour{
+            font-size: 14px;
+            margin: 5px 0px;
+        } 
+        .contactUs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -316,21 +362,26 @@
         <div class="popup" >
             <img src="on1.png" id="logo" alt="Online Notepad" width="113" height="81" onclick="myFunctionPopUp()">
             <div class="popuptext" id="myPopup">
-                <img src="cross.png" id="closeIcon" alt="About Close Icon" width="29" height="29" onclick="myFunctionPopUp()">
-                <h1 class="hOne">About Online Notepad :</h1>
+                <div class="iconWrapper">
+                    <img src="cross.png" id="closeIcon" class="iconImg" alt="Close Icon" width="29" height="29" onclick="myFunctionPopUp()">
+                    <img src="help.png" id="helpIcon" class="iconImg" alt="Help Icon" width="29" height="29" onclick="showSelectedSection('aboutContactUs')">
+                    <img src="question.png" id="questionIcon" class="iconImg" alt="FAQ Icon" width="29" height="29" onclick="showSelectedSection('aboutFaq')">
+                    <img src="info.png" id="infoIcon" class="iconImg" alt="About Us Icon" width="29" height="29" onclick="showSelectedSection('aboutContent')">
+                </div>
+                <h1 class="hOne" id="hOne">About Online Notepad :</h1>
             <div class="aboutDiv">
             <img src="note.png" id="logoAbout" alt="Online Notepad Image" width="398" height="202" >
-            <div class="content">
-                <span class="aboutSpan" style="font-size: 14px;">Online Notepad is for editing plain text online, It is a free browser-based text editor that will help you to write documents in real-time on the internet. It is super simple tool which does not require any login or any user data. It is great for writing quick notes and can be used as a replacement of a paper or a notepad or a text file. Online Notepad provides basic useful features like copy, paste, undo, redo, font formatting, spell checker, word counter, character counter. It also has the option to download or save the drafted text. It is Designed and developed by Green Games. Feel free to contact d.old.green.games@gmail.com for any concern !</span>
-                <span style="margin: 1em 0px; text-decoration: underline; text-underline-offset: 3px;">
+            <div class="content" id="aboutContent">
+                <p class="aboutSpan" style="font-size: 14px;">Online Notepad is for editing plain text online, It is a free browser-based text editor that will help you to write documents in real-time on the internet. It is super simple tool which does not require any login or any user data. It is great for writing quick notes and can be used as a replacement of a paper or a notepad or a text file. Online Notepad provides basic useful features like copy, paste, undo, redo, font formatting, spell checker, word counter, character counter. It also has the option to download or save the drafted text. It is Designed and Developed by Green Games. Feel free to contact d.old.green.games@gmail.com for any concern !</p>
+                <p style="margin: 1em 0px; text-decoration: underline; text-underline-offset: 3px;">
                     Browser Compatibility:
-                </span>
-                <span style="font-size: 14px;">
+                </p>
+                <p style="font-size: 14px;">
                     Online Notepad supports modern web browsers : Google Chrome, Mozilla Firefox, Safari, Opera, Edge, Internet Explorer . You need to enable JavaScript in order to use the application.
-                </span>
-                <span style="margin: 1em 0px; text-decoration: underline; text-underline-offset: 3px;">
+                </p>
+                <p style="margin: 1em 0px; text-decoration: underline; text-underline-offset: 3px;">
                     Uses of Online Notepad:
-                </span>
+                </p>
                 <ul style="font-size: 14px;padding-left: 25px;">
                     <li>It makes writing notes easier and more convenient.</li>
                     <li>Due to its simple design, you will be able to concentrate more on your works.</li>
@@ -342,9 +393,73 @@
                     <li>It is very helpful for the Bloggers, writers, and webmasters who can use it to note down their thoughts.</li>
                 </ul>
             </div>
+            <div class="faq" id="aboutFaq">
+                <h2 class="hTwo">Here are some frequently asked questions !</h2>
+                <h3 class="hThree">What is onlinenotepad.online ?</h3>
+                <p class="hFour">
+                    onlinenotepad.online is a free online notepad / text editor in your web browser. With onlinenotepad.online you can easily create any text notes which includes ideas, to-do list, links, or any other plain text etc..
+                </p>
+                <h3 class="hThree">Is onlinenotepad.online free to use ?</h3>
+                <p class="hFour">
+                    Yes. It's absolutely free.
+                </p>
+                <h3 class="hThree">Why should I use onlinenotepad.online ?</h3>
+                <p class="hFour">
+                    – Its simple design makes it user friendly.
+                </p>
+                <p class="hFour">
+                    – Browser compatible,  Works online in a web browser.
+                </p>
+                <p class="hFour">
+                    – 100% Free online tool.
+                </p>
+                <p class="hFour">
+                    – No login required, no sign up, no authentication required.
+                </p>
+                <p class="hFour">
+                    – Allows spell check and provide save or download options.
+                </p>
+                <p class="hFour">
+                    – Characters and words counter.
+                </p>
+                <p class="hFour">
+                    – A simple web interface.
+                </p>
+                <p class="hFour">
+                    – Works on all the operating Systems and works on all top devices ( PC / Tablets / Smartphones).
+                </p>
+                <h3 class="hThree">How to create a new text ?</h3>
+                <p class="hFour">
+                    Load onlinenotepad.online in a tab on your browser and you are ready to make your notes.
+                </p>
+                <h3 class="hThree">Is it secure ?</h3>
+                <p class="hFour">
+                    Yes it is completely secure. We do not store any user data or content in any database or browser storage.
+                    So your content is completely private to you.
+                </p>
+                <h3 class="hThree">Can I save my text as .txt file on my device ?</h3>
+                <p class="hFour">
+                    Yes, you can use the download button to save your notes. You can save any number of notes as required.
+                </p>
+                <h3 class="hThree">Does it require download application ?</h3>
+                <p class="hFour">
+                    No, you do not need to download onlinenotepad.online, you can open it in browser.
+                </p>
+                <h3 class="hThree">Is it a text editor ? </h3>
+                <p class="hFour">
+                    Yes, onlinenotepad.online is web based text editor. 
+                </p>
+                <h3 class="hThree">Is it best online notepad ?</h3>
+                <p class="hFour">
+                    There are lot of web based online notepad applications, so its difficult to judge which is best. but the simplicity of onlinenotepad.online makes this tool very user friendly.
+                </p>
             </div>
-            <div style="text-align:left; padding-left: 5px;">
-                <span>Copyright © 2023. All rights reserved.</span>
+            <div class="contactUs" id="aboutContactUs">
+                <h2 class="hTwo">onlinenotepad.online is designed and developed by Green Games. Feel free to contact d.old.green.games@gmail.com for any concern !</h2>
+            </div>
+            </div>
+            <div class="copyWrite" id="copyWrite" style="text-align:left; padding-left: 5px;">
+                <p>Copyright © 2023. All rights reserved.</p>
             </div>
             </div>
         </div>
@@ -363,6 +478,7 @@
         </div> -->
     </div>
     <div class="navbar">
+        <!-- <a href="./about.html">About</a> -->
         <div class="btnContainer">
             <div>
                 <button id="dBtn" onclick="downloadFile()" disabled class="btn btn-download">DOWNLOAD</button>
@@ -429,9 +545,53 @@
             c.click();
     }
     function myFunctionPopUp() {
+        document.getElementById("copyWrite").style.marginTop="0px"
+        document.getElementById("infoIcon").style.display="none"
+        document.getElementById("helpIcon").style.display="block"
+        document.getElementById("questionIcon").style.display="block"
+        document.getElementById("hOne").innerHTML="About Online Notepad :"
+        document.getElementById("aboutContactUs").style.display="none"
+        document.getElementById("aboutFaq").style.display="none"
+        document.getElementById("aboutContent").style.display="flex"
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
+    }
+    function showSelectedSection(selected) {
+        if(selected==="aboutContactUs"){
+            document.getElementById("copyWrite").style.marginTop="15px"
+            document.getElementById("hOne").innerHTML="Contact Us :"
+            document.getElementById("aboutFaq").style.display="none"
+            document.getElementById("aboutContent").style.display="none"
+            document.getElementById("aboutContactUs").style.display="flex"
+
+            document.getElementById("helpIcon").style.display="none"
+            document.getElementById("infoIcon").style.display="block"
+            document.getElementById("questionIcon").style.display="block"
+
         }
+        else if(selected==="aboutFaq"){
+            document.getElementById("hOne").innerHTML="FAQ :"
+            document.getElementById("copyWrite").style.marginTop="0px"
+            document.getElementById("aboutContactUs").style.display="none"
+            document.getElementById("aboutContent").style.display="none"
+            document.getElementById("aboutFaq").style.display="block"
+
+            document.getElementById("questionIcon").style.display="none"
+            document.getElementById("helpIcon").style.display="block"
+            document.getElementById("infoIcon").style.display="block"
+        }
+        else{
+            document.getElementById("copyWrite").style.marginTop="0px"
+            document.getElementById("hOne").innerHTML="About Online Notepad :"
+            document.getElementById("aboutContactUs").style.display="none"
+            document.getElementById("aboutFaq").style.display="none"
+            document.getElementById("aboutContent").style.display="flex"
+
+            document.getElementById("infoIcon").style.display="none"
+            document.getElementById("helpIcon").style.display="block"
+            document.getElementById("questionIcon").style.display="block"
+        }
+    }
     function changeStyle(mode) {
         switch (mode) {
             case "b":
