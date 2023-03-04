@@ -1,3 +1,5 @@
 https://onlinenotepad.online/
-http://onlinenotepad.online/
-http://www.onlinenotepad.online/
+https://onlinenotepad.online/index.html
+https://onlinenotepad.online/about.html
+https://www.onlinenotepad.online/faq.html
+https://www.onlinenotepad.online/contact.html
