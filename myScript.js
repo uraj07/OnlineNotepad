@@ -35,6 +35,7 @@ function myFunction(){
         }
     },100)
 }
+if(fileContent)
 fileContent.value = "";
 function downloadFile() {
         let e = fileContent.value;
